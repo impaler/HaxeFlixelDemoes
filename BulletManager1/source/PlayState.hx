@@ -19,7 +19,7 @@ class PlayState extends FlxState
             debug = new FlxText(0, 0, 200, "");
             
             //add the state objects to the game
-//			add(Registry.stars.sprite);
+			add(Registry.stars.sprite);
 			add(Registry.bullets);
 			add(Registry.player);
 			add(debug);
@@ -28,8 +28,8 @@ class PlayState extends FlxState
 		
 		override public function update():Void
 		{
-            //draw the awsome star background!
-//            Registry.stars.draw();
+            //draw the awesome star background!
+            Registry.stars.draw();
 			
             //update the debug text to tell us some useful things about the bullets FlxGroup
 			debug.text = "Bullet Pool: " + Registry.bullets.countLiving() + "/" + Registry.bullets.members.length + " - Press F1/F2/F3";
