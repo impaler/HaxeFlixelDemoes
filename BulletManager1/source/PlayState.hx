@@ -32,17 +32,17 @@ class PlayState extends FlxState
 			debug.text = "Bullet Pool: " + Registry.bullets.countLiving() + "/" + Registry.bullets.members.length + " - Press F1/F2/F3";
 			
             //setup the logic to have different fire modes
-			if (FlxG.keys.justReleased("F1"))
+			if (FlxG.keys.justReleased("ONE"))
 			{
 				Registry.player.fireType = 1;
 			}
 			
-			if (FlxG.keys.justReleased("F2"))
+			if (FlxG.keys.justReleased("TWO"))
 			{
 				Registry.player.fireType = 2;
 			}
 			
-			if (FlxG.keys.justReleased("F3"))
+			if (FlxG.keys.justReleased("THREE"))
 			{
 				Registry.player.fireType = 3;
 			}
