@@ -26,14 +26,13 @@ class Fx extends FlxGroup
             var tempPixel = new FlxEmitter(10,10,particleCount);
             tempPixel.setXSpeed( -50, 50);
             tempPixel.setYSpeed( -50, 50);
-            tempPixel.setRotation(0, 0); // VITAL!!!
-            //todo the current FlxEmitter does not update exists like as3 flixel before and after it is started??
-            tempPixel.exists = false;
+            tempPixel.setRotation(0, 0);
             
             var p = 0;
             while (p < particleCount) {
                 var whitePixel = new FlxParticle();
                 whitePixel.makeGraphic(2, 2);
+				whitePixel.alpha = Math.random();
                 tempPixel.add(whitePixel);
                 
                 p++;
@@ -50,7 +49,7 @@ class Fx extends FlxGroup
         jet.gravity = 300;
         jet.setXSpeed( - 30, 30);
         jet.setYSpeed(80, 120);
-        jet.setRotation(0, 0); // VITAL!!!
+        jet.setRotation(0, 0);
         jet.makeParticles(Jets, 80, 0, true, 0);
         jet.start(false);
 
