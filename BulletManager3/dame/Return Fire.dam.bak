@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <version>1.2.9</version>
+  <bgColor>0x000000</bgColor>
+  <spriteEntries/>
+  <layers>
+    <group name="Group1" xScroll="1" yScroll="1" visible="true" open="true" locked="false" exports="true">
+      <maplayer name="Map1" xScroll="1" yScroll="1" x="0" y="0" width="20" height="90" tileset="tiles.png" tileWidth="16" tileHeight="16" visible="true" hasHits="false" drawIdx="1" collideIdx="1" eraseIdx="0" locked="false" exports="true">
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,6,7,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,12,15,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,6,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,12,15,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,6,7,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,6,8,8,7,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,6,21,8,8,8,7,0,0,0,0,0,6,7,0</row>
+        <row>0,0,0,0,0,6,9,8,11,11,20,9,7,0,0,0,0,12,15,0</row>
+        <row>0,0,0,0,0,20,8,9,11,11,9,10,8,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,13,8,21,11,11,21,20,14,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,12,13,13,14,14,15,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,5,0,0,0</row>
+        <row>0,0,0,0,0,6,7,0,0,0,0,0,0,0,6,11,8,7,0,0</row>
+        <row>0,0,0,0,0,12,15,0,0,0,0,0,0,0,8,9,10,8,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,12,13,14,15,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,1,1,0,0,0,0,0,0,0,0,0,6,7,0,0,0,0</row>
+        <row>0,0,1,2,2,1,0,0,0,0,0,0,0,0,12,15,0,0,0,0</row>
+        <row>0,0,2,8,20,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,2,12,15,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,3,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,4,5,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,6,11,8,7,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,6,7,0,0,8,9,10,8,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,12,15,0,0,12,13,14,15,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,4,5,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0</row>
+        <row>0,6,11,8,7,0,0,0,0,0,0,0,1,1,2,1,0,0,0,0</row>
+        <row>0,8,9,10,8,0,0,0,0,0,0,0,2,8,20,2,0,0,0,0</row>
+        <row>0,12,13,14,15,0,0,0,0,0,0,0,2,12,15,2,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,3,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,4,5,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,1,6,11,8,7,1,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,2,8,9,10,8,2,0,0,1,0,1,0</row>
+        <row>0,0,0,0,0,0,0,0,3,12,13,14,15,3,0,0,2,8,2,0</row>
+        <row>0,6,7,0,0,0,0,0,0,0,0,0,0,0,0,0,2,13,2,0</row>
+        <row>0,12,15,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,3,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,6,7,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,2,8,8,2,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,6,21,8,8,8,7,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,1,2,9,8,11,11,20,9,2,1,0,0,0,0,0,0,0</row>
+        <row>0,0,0,2,20,8,9,11,11,9,10,20,2,0,0,0,0,0,0,0</row>
+        <row>0,0,0,3,13,8,21,11,11,21,20,14,3,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,12,13,13,14,14,15,0,0,4,5,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,6,11,8,7,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,8,9,10,8,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,12,13,14,15,0,0,0,0</row>
+        <row>0,0,0,0,6,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,12,15,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,7,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,8,8,7,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,21,8,8,8,7</row>
+        <row>0,0,0,1,0,0,1,0,0,0,0,0,0,6,9,8,11,11,20,9</row>
+        <row>0,0,0,2,9,20,2,0,0,0,0,0,0,20,8,9,11,11,9,10</row>
+        <row>0,0,0,2,12,15,2,0,0,0,0,0,0,13,8,21,11,11,21,20</row>
+        <row>0,0,0,3,0,0,3,0,0,0,0,0,0,0,12,13,13,14,14,15</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,7,0,0</row>
+        <row>0,0,0,0,0,0,4,5,0,0,0,0,0,0,0,0,12,15,0,0</row>
+        <row>0,0,0,0,0,6,11,8,7,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,4,8,9,10,8,5,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,12,13,13,14,14,15,0,0,0,4,5,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,1,6,11,8,7,1,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,2,8,9,10,8,2,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,3,12,13,14,15,3,0,0,0</row>
+        <row>0,0,0,4,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,6,11,8,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,8,9,10,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,12,13,14,15,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,6,7,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,12,15,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+      </maplayer>
+    </group>
+  </layers>
+  <tileMatrix currentMatrix="0" rows="3" cols="3" randomizeMiddle="true" ignoreClear="false" ignoreMapEdges="true" allowSpecialTiles="false" tileset="">
+    <row>
+      <tile>0</tile>
+      <tile>0</tile>
+      <tile>0</tile>
+    </row>
+    <row>
+      <tile>0</tile>
+      <tile>0</tile>
+      <tile>0</tile>
+    </row>
+    <row>
+      <tile>0</tile>
+      <tile>0</tile>
+      <tile>0</tile>
+    </row>
+    <specialConnections>
+      <sets>
+        <connections name="Single Inside Corners">
+          <entry green="0x1111111" red="0x10000000"/>
+          <entry green="0x11011111" red="0x100000"/>
+          <entry green="0x11111110" red="0x1"/>
+          <entry green="0x11111011" red="0x100"/>
+        </connections>
+        <connections name="Double Inside Corners">
+          <entry green="0x1011111" red="0x10100000"/>
+          <entry green="0x11011110" red="0x100001"/>
+          <entry green="0x11111010" red="0x101"/>
+          <entry green="0x1111011" red="0x10000100"/>
+        </connections>
+        <connections name="Triple Inside Corners">
+          <entry green="0x1011011" red="0x10100100"/>
+          <entry green="0x1011110" red="0x10100001"/>
+          <entry green="0x11011010" red="0x100101"/>
+          <entry green="0x1111010" red="0x10000101"/>
+        </connections>
+        <connections name="Quad Inside Corners">
+          <entry green="0x1011010" red="0x10100101"/>
+          <entry green="0x0" red="0x0"/>
+          <entry green="0x0" red="0x0"/>
+          <entry green="0x0" red="0x0"/>
+        </connections>
+        <connections name="Double Outside Corners">
+          <entry green="0x10" red="0x1011000"/>
+          <entry green="0x1000" red="0x1010010"/>
+          <entry green="0x1000000" red="0x11010"/>
+          <entry green="0x10000" red="0x1001010"/>
+        </connections>
+        <connections name="Double Outside Edges">
+          <entry green="0x1000010" red="0x11000"/>
+          <entry green="0x11000" red="0x1000010"/>
+          <entry green="0x0" red="0x0"/>
+          <entry green="0x0" red="0x0"/>
+        </connections>
+        <connections name="Opposing Double Inside Corners">
+          <entry green="0x1111110" red="0x10000001"/>
+          <entry green="0x11011011" red="0x100100"/>
+          <entry green="0x0" red="0x0"/>
+          <entry green="0x0" red="0x0"/>
+        </connections>
+      </sets>
+      <rows>
+        <row set="0">
+          <tiles>
+            <id>0</id>
+            <id>0</id>
+            <id>0</id>
+            <id>0</id>
+          </tiles>
+        </row>
+        <row set="0">
+          <tiles>
+            <id>0</id>
+            <id>0</id>
+            <id>0</id>
+            <id>0</id>
+          </tiles>
+        </row>
+      </rows>
+    </specialConnections>
+  </tileMatrix>
+  <tileMatrixData name="matrix1" rows="3" cols="3" randomizeMiddle="true" ignoreClear="false" ignoreMapEdges="true" allowSpecialTiles="false" tileset="">
+    <tiles>0,0,0,0,0,0,0,0,0</tiles>
+    <connections set="0">
+      <tiles>0,0,0,0</tiles>
+    </connections>
+    <connections set="0">
+      <tiles>0,0,0,0</tiles>
+    </connections>
+  </tileMatrixData>
+  <tileBrushes>
+    <brush name="brush 1" tileset="tiles.png">
+      <row y="25">
+        <tile x="11" id="4"/>
+        <tile x="12" id="5"/>
+      </row>
+      <row y="26">
+        <tile x="10" id="6"/>
+        <tile x="11" id="11"/>
+        <tile x="12" id="8"/>
+        <tile x="13" id="7"/>
+      </row>
+      <row y="27">
+        <tile x="10" id="8"/>
+        <tile x="11" id="9"/>
+        <tile x="12" id="10"/>
+        <tile x="13" id="8"/>
+      </row>
+      <row y="28">
+        <tile x="10" id="12"/>
+        <tile x="11" id="13"/>
+        <tile x="12" id="14"/>
+        <tile x="13" id="15"/>
+      </row>
+    </brush>
+    <brush name="brush 2" tileset="tiles.png">
+      <row y="6">
+        <tile x="8" id="6"/>
+        <tile x="9" id="7"/>
+      </row>
+      <row y="7">
+        <tile x="7" id="6"/>
+        <tile x="8" id="8"/>
+        <tile x="9" id="8"/>
+        <tile x="10" id="7"/>
+      </row>
+      <row y="8">
+        <tile x="6" id="6"/>
+        <tile x="7" id="21"/>
+        <tile x="8" id="8"/>
+        <tile x="9" id="8"/>
+        <tile x="10" id="8"/>
+        <tile x="11" id="7"/>
+      </row>
+      <row y="9">
+        <tile x="5" id="6"/>
+        <tile x="6" id="9"/>
+        <tile x="7" id="8"/>
+        <tile x="8" id="11"/>
+        <tile x="9" id="11"/>
+        <tile x="10" id="20"/>
+        <tile x="11" id="9"/>
+      </row>
+      <row y="10">
+        <tile x="5" id="20"/>
+        <tile x="6" id="8"/>
+        <tile x="7" id="9"/>
+        <tile x="8" id="11"/>
+        <tile x="9" id="11"/>
+        <tile x="10" id="9"/>
+        <tile x="11" id="10"/>
+      </row>
+      <row y="11">
+        <tile x="5" id="13"/>
+        <tile x="6" id="8"/>
+        <tile x="7" id="21"/>
+        <tile x="8" id="11"/>
+        <tile x="9" id="11"/>
+        <tile x="10" id="21"/>
+        <tile x="11" id="20"/>
+      </row>
+      <row y="12">
+        <tile x="6" id="12"/>
+        <tile x="7" id="13"/>
+        <tile x="8" id="13"/>
+        <tile x="9" id="14"/>
+        <tile x="10" id="14"/>
+        <tile x="11" id="15"/>
+      </row>
+    </brush>
+    <brush name="brush 3" tileset="tiles.png">
+      <row y="21">
+        <tile x="2" id="1"/>
+        <tile x="5" id="1"/>
+      </row>
+      <row y="22">
+        <tile x="2" id="2"/>
+        <tile x="3" id="8"/>
+        <tile x="4" id="20"/>
+        <tile x="5" id="2"/>
+      </row>
+      <row y="23">
+        <tile x="2" id="2"/>
+        <tile x="3" id="12"/>
+        <tile x="4" id="15"/>
+        <tile x="5" id="2"/>
+      </row>
+      <row y="24">
+        <tile x="2" id="3"/>
+        <tile x="5" id="3"/>
+      </row>
+    </brush>
+    <brush name="brush 4" tileset="tiles.png">
+      <row y="1">
+        <tile x="5" id="6"/>
+        <tile x="6" id="7"/>
+      </row>
+      <row y="2">
+        <tile x="5" id="12"/>
+        <tile x="6" id="15"/>
+      </row>
+    </brush>
+  </tileBrushes>
+  <colorSwatches/>
+  <bookmarks>
+    <bookmark enabled="false"/>
+    <bookmark enabled="false"/>
+    <bookmark enabled="false"/>
+    <bookmark enabled="false"/>
+    <bookmark enabled="false"/>
+    <bookmark enabled="false"/>
+    <bookmark enabled="false"/>
+    <bookmark enabled="false"/>
+    <bookmark enabled="false"/>
+  </bookmarks>
+  <exporter name="C:\Program Files (x86)\DAME\lua\Exporters\flixelComplex.lua" spritepos="Top Left" rotatedSpritePos="false">
+    <setting name="ExportOnlyCSV">true</setting>
+    <setting name="Imports"/>
+    <setting name="TileMapClass">FlxTilemap</setting>
+    <setting name="FlixelPackage">org.flixel</setting>
+    <setting name="GamePackage">com</setting>
+    <setting name="BaseClass">BaseLevel</setting>
+    <setting name="CSVDir">G:\Flash\Flixel City\assets</setting>
+    <setting name="AS3Dir"/>
+  </exporter>
+  <guides>
+    <snap>true</snap>
+    <visible>false</visible>
+    <x>0</x>
+    <y>0</y>
+    <xspace>32</xspace>
+    <yspace>32</yspace>
+    <colour>2013200639</colour>
+    <snaptype>TopLeft</snaptype>
+    <paintcontinuous>true</paintcontinuous>
+    <showgameregion>false</showgameregion>
+    <gameregionwidth>640</gameregionwidth>
+    <gameregionheight>480</gameregionheight>
+    <gameregionopacity>0.1</gameregionopacity>
+    <minGridSpace>32</minGridSpace>
+  </guides>
+</project>
