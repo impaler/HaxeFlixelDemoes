@@ -1,5 +1,6 @@
 package ;
 
+import org.flixel.FlxLayer;
 import nme.Lib;
 import org.flixel.FlxU;
 import org.flixel.FlxSprite;
@@ -21,15 +22,43 @@ class PlayState extends FlxState
             debug = new FlxText(0, 0, 200, "");
             
             //add the state objects to the game
+			var stars = new FlxLayer("stars");
 			add(Registry.stars);
+			stars.add(Registry.stars);
+			addLayer(stars);
+			
+			var bg = new FlxLayer("bg");
 			add(Registry.background);
+			bg.atlas = FlxLayer.createAtlas(Std.int(Registry.background.map.width), Std.int(Registry.background.map.height), "bg");
+			bg.add(Registry.background);
+			addLayer(bg);
+			
+			var fx = new FlxLayer("fx");
 			add(Registry.fx);
-            add(Registry.enemies);
+			fx.add(Registry.fx);
+			addLayer(fx);
+			
+//            add(Registry.enemies);
+//			add(Registry.enemyBullets);
+			
+			var player = new FlxLayer("player");
+			player.atlas = FlxLayer.createAtlas(Std.int(FlxG.width), Std.int(FlxG.height), "player");
 			add(Registry.bullets);
-			add(Registry.enemyBullets);
 			add(Registry.player);
-			add(Registry.hud);
+			player.add(Registry.bullets);
+			player.add(Registry.player);			
+			addLayer(player);
+			
+//			var ui = new FlxLayer("ui");
+//			ui.atlas = FlxLayer.createAtlas(1024, 1024, "ui");
+//			ui.add(Registry.hud);
+//			add(Registry.hud);
+//			addLayer(ui);
+			
+//			var debugLayer = new FlxLayer("debug");	
 			add(debug);
+//			debugLayer.add(debug);
+			addLayer(debug.layer);
 			
 			times = new Array();
             

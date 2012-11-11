@@ -74,6 +74,7 @@ class Fx extends FlxGroup
 		var pixel = pixels.getFirstAvailable();
 		
 		if (pixel != null) {
+			//the cast here tells Haxe what type of object we are using so we can call start()
 			var pixel = cast(pixels.getFirstAvailable(FlxEmitter),FlxEmitter);
 				pixel.x = ax;
 				pixel.y = ay;

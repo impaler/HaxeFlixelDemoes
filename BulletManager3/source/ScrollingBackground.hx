@@ -18,7 +18,7 @@ import org.flixel.FlxGroup;
 //		[Embed(source = '../assets/mapCSV_Group1_Map1.csv', mimeType = 'application/octet-stream')] private var map1CSV:Class;
 //		[Embed(source = '../assets/tiles.png')] private var tilesPNG:Class;
 		
-		private var map:FlxTilemap;
+		public var map:FlxTilemap;
 		private var dolly:FlxSprite;
 //		private var stars:FlxStarField;
 		
@@ -34,7 +34,8 @@ import org.flixel.FlxGroup;
 			map = new FlxTilemap();
 			map.loadMap(Assets.getText("assets/levels/mapCSV_Group1_Map1.csv"), "assets/levels/tiles.png", 16, 16, FlxTilemap.OFF);
 			map.x = (FlxG.width / 2) - (map.width / 2);
-			map.y = -(FlxG.height*3);
+//			map.y = -(map.height);
+			
 			//todo
 //			map.scrollFactor.x = 0.5;
 //			map.scrollFactor.y = 1;
@@ -48,7 +49,7 @@ import org.flixel.FlxGroup;
 			//	Tell Flixels camera system to follow this sprite
 			//	Call this AFTER setting the dolly coordinates to avoid the "camera panning to sprite" effect
 			//todo
-//			FlxG.camera.follow(dolly,1);
+			FlxG.camera.follow(dolly,0);
 			
 //			add(stars);
 			add(map);
@@ -59,11 +60,12 @@ import org.flixel.FlxGroup;
 		{
 			super.update();
 			
-			map.y += 1;
-//			map.velocity.y = -20;
+//			map.y += 1;
+//			map.velocity.y = 200;
+//			map.acceleration.y = 20;
 			
 			//todo dolly
-//			dolly.velocity.y = -20;
+			dolly.velocity.y = -20;
 			
 			//	Have we scrolled off the top of our map?
 //			if (dolly.y < -480)
@@ -75,7 +77,7 @@ import org.flixel.FlxGroup;
 //			}
 			
 			if ( map.y == FlxG.height) {
-				map.y = -(FlxG.height*3);
+				map.y = -(map.height);
 			}
 			
 		}
