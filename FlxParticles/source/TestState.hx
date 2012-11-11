@@ -52,8 +52,6 @@ class TestState extends FlxState
 		var poolSize = 20;
 		var i = 0;
 		while ( i < poolSize ) {
-			var particleCount = 10;
-
 			var tempPixel = new FlxEmitterExt();
 			tempPixel.setRotation( 0, 0 );
 			tempPixel.setMotion( 0, 2, 2.2, 360, 100 );
@@ -61,7 +59,8 @@ class TestState extends FlxState
 			
 			var paritcleSize = 200;
 			while ( i < paritcleSize ) {
-				tempPixel.add( new FadeParticle() );
+				var particle =  new FadeParticle();
+				tempPixel.add( particle );
 				i++;
 			}
 			
@@ -78,6 +77,8 @@ class TestState extends FlxState
 		addLayer( Emitters );
 
 		_emittersOld = new FlxGroup();
+		
+		
 
 		var poolSize = 20;
 		var i = 0;
@@ -86,13 +87,7 @@ class TestState extends FlxState
 
 			var tempPixel = new FlxEmitter();
 			tempPixel.setRotation( 0, 0 );
-//			tempPixel.makeParticles( "assets/particles.png", 220, 0, true, 0 );
-			
-			var paritcleSize = 200;
-			while ( i < paritcleSize ) {
-				tempPixel.add( new FadeParticle() );
-				i++;
-			}
+			tempPixel.makeParticles( "assets/particles.png", 220, 0, true, 0 );
 			
 			_emittersOld.add( tempPixel );
 			i++;
