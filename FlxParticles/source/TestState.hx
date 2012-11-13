@@ -49,37 +49,32 @@ class TestState extends FlxState
 		add( _infobox );
 
 		_emitters = new FlxGroup();
-
 		var poolSize = 20;
 		var i = 0;
 		while ( i < poolSize ) {
-			
-			var tempPixel = new FlxEmitterExt();
-			tempPixel.setRotation( 0, 0 );
-			tempPixel.setMotion( 0, 2, 2.2, 360, 100 );
-//			tempPixel.makeParticles( "assets/particles.png", 220, 0, true, 0 );
-			
-			var paritcleSize = 200;
-			while ( i < paritcleSize ) {
-				var particle =  new FadeParticle();
-				tempPixel.add( particle );
-				i++;
-			}
-			_emitters.add( tempPixel );
-			i++;
+		var tempPixel = new FlxEmitterExt();
+		tempPixel.setRotation( 0, 0 );
+		tempPixel.setMotion( 0, 2, 2.2, 360, 100 );
+		
+		var paritcleSize = 100;
+		var j = 0;
+		while ( j < paritcleSize ) {
+		    var particle =  new FadeParticle();
+		    tempPixel.add( particle );
+		    j++;
 		}
-
+		_emitters.add( tempPixel );
+		i++;
+		}
 		add( _emitters );
 		
 		#if cpp
 		var Emitters = new FlxLayer ("ext");
-		//requires a large atlas for the same particles something is wrong
-		Emitters.atlas=  FlxLayer.createAtlas(1000, 1000, "ext");
+		Emitters.atlas=  FlxLayer.createAtlas(50, 50, "ext");
 		Emitters.add( _emitters );
 		Emitters.blend = BlendMode.ADD;
 		addLayer( Emitters );
 		#end
-		
 		
 		_emittersOld = new FlxGroup();
 

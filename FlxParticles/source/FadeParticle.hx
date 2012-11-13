@@ -12,7 +12,7 @@ class FadeParticle extends FlxParticle
 	  super();
 	  
 		var Graphics = "assets/jets.png";
-		loadGraphic( Graphics , false, false, 0, 0, true );
+		loadGraphic( Graphics  );
 		
 		this.alpha = .4;
 		exists = false;
