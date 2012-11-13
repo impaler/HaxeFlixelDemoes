@@ -12,18 +12,7 @@ class FadeParticle extends FlxParticle
 	  super();
 	  
 		var Graphics = "assets/jets.png";
-		var totalFrames:Int = 1;
-		var randomFrame:Int;
-			  
-		var sprite:FlxSprite = new FlxSprite();
-		sprite.loadGraphic(Graphics, true);
-		totalFrames = sprite.frames;
-		sprite.destroy();
-			  
-		randomFrame = Math.floor(FlxG.random() * totalFrames); 
-			  
-		loadGraphic(Graphics, true,false,0,0,true);
-		frame = randomFrame;
+		loadGraphic( Graphics , false, false, 0, 0, true );
 		
 		this.alpha = .4;
 		exists = false;
@@ -38,6 +27,8 @@ class FadeParticle extends FlxParticle
 
 	override public function onEmit( ):Void
 	{
+		exists = true;
+		visible = true;
 		this.alpha = .4;
 	}
 

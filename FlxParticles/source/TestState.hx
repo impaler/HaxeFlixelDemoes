@@ -1,5 +1,6 @@
 package;
 
+import org.flixel.system.layer.Atlas;
 import org.flixel.FlxParticle;
 import org.flixel.FlxSprite;
 import nme.display.BlendMode;
@@ -52,6 +53,7 @@ class TestState extends FlxState
 		var poolSize = 20;
 		var i = 0;
 		while ( i < poolSize ) {
+			
 			var tempPixel = new FlxEmitterExt();
 			tempPixel.setRotation( 0, 0 );
 			tempPixel.setMotion( 0, 2, 2.2, 360, 100 );
@@ -63,22 +65,23 @@ class TestState extends FlxState
 				tempPixel.add( particle );
 				i++;
 			}
-			
 			_emitters.add( tempPixel );
 			i++;
 		}
 
 		add( _emitters );
-
+		
+		#if cpp
 		var Emitters = new FlxLayer ("ext");
-		add( _emitters );
+		//requires a large atlas for the same particles something is wrong
+		Emitters.atlas=  FlxLayer.createAtlas(1000, 1000, "ext");
 		Emitters.add( _emitters );
 		Emitters.blend = BlendMode.ADD;
 		addLayer( Emitters );
-
+		#end
+		
+		
 		_emittersOld = new FlxGroup();
-		
-		
 
 		var poolSize = 20;
 		var i = 0;
@@ -93,10 +96,17 @@ class TestState extends FlxState
 			i++;
 		}
 
-		var oldEmitters = new FlxLayer ("old");
 		add( _emittersOld );
+		
+		#if cpp
+		var oldEmitters = new FlxLayer ("old");
+		//lowest value for altas even though the image is 16x4 pixels
+		oldEmitters.atlas=  FlxLayer.createAtlas(20,10, "old");
 		oldEmitters.add( _emittersOld );
 		addLayer( oldEmitters );
+		#end
+	
+	
 		_emittersOld.visible = false;
 
 		//add top text
