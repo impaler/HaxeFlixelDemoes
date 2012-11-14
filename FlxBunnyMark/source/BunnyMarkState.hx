@@ -1,12 +1,13 @@
 package;
 
-import org.flixel.FlxPoint;
-import org.flixel.plugin.photonstorm.FlxCollision;
-import org.flixel.system.input.Touch;
 import nme.installer.Assets;
-import flash.ui.Mouse;
 import nme.Assets;
 import nme.Lib;
+#if (desktop||flash)
+import flash.ui.Mouse;
+#end
+import org.flixel.FlxPoint;
+import org.flixel.plugin.photonstorm.FlxCollision;
 import org.flixel.FlxButton;
 import org.flixel.FlxCamera;
 import org.flixel.FlxG;
@@ -18,12 +19,16 @@ import org.flixel.FlxTileblock;
 import org.flixel.plugin.pxText.FlxBitmapTextField;
 import org.flixel.plugin.pxText.PxBitmapFont;
 import org.flixel.plugin.pxText.PxTextAlign;
+#if (mobile)
+import org.flixel.system.input.Touch;
+#end
+#if (cpp)
+import org.flixel.FlxLayer;
+#end
 
 /**
  * ...
- * @author Zaphod
- * 
- * Add bunnies with touch/mouse by Impaler
+ * @author Zaphod, Impaler
  * 
  */
 class BunnyMarkState extends FlxState
@@ -51,15 +56,23 @@ class BunnyMarkState extends FlxState
 	private var bunnyCounter:FlxText;
 	private var fpsCounter:FlxText;
 
-	
 	private var times:Array<Float>;
-    
+
+	#if (mobile)
     private var touches:Array<Touch>;
+	#end
+
+	private var touchSprite:FlxSprite;
     
 	public function new()
 	{
 		gravity = 5;
+		#if flash
+		incBunnies = 50;
+		#elseif cpp
 		incBunnies = 100;
+		#end
+		
 		numBunnies = incBunnies;
 		
 		bgSize = 32;
@@ -74,8 +87,8 @@ class BunnyMarkState extends FlxState
 	override public function create():Void 
 	{
 		#if flash
-		FlxG.framerate = 60;
-		FlxG.flashFramerate = 60;
+		FlxG.framerate = 30;
+		FlxG.flashFramerate = 30;
 		#else
 		FlxG.framerate = 60;
 		FlxG.flashFramerate = 60;
@@ -100,12 +113,12 @@ class BunnyMarkState extends FlxState
 		fpsCounter.setFormat(null, 22, 0x000000, "center");
         
         bunnies = new FlxGroup();
-        
+		
         touchSprite = new FlxSprite();
-        touchSprite.makeGraphic(20, 20);
+        touchSprite.makeGraphic(1, 1);
         touchSprite.color = Std.int(Math.random() * 0xffffff);
         touchSprite.alpha = 0;
-        
+		
         add(bg);
         add(bunnies);
         add(bunnyCounter);
@@ -115,15 +128,34 @@ class BunnyMarkState extends FlxState
         addBunnies(numBunnies);
         add(fpsCounter);
         add(touchSprite);
-        
+		
+		#if (cpp || neko)
+		var BgAndGameObjects = new FlxLayer('BGAndGameObjects');
+		BgAndGameObjects.atlas = FlxLayer.createAtlas(256, 512, "BGAndGameObjects");
+		BgAndGameObjects.add(bg);
+		BgAndGameObjects.add(bunnies);
+		BgAndGameObjects.add(pirate);
+		addLayerAt(BgAndGameObjects, 1);
+		
+		var textLayer:FlxLayer = bunnyCounter.layer;
+		textLayer.add(bunnyCounter);
+		textLayer.add(fpsCounter);
+		addLayerAt(textLayer, 2);
+		
+		var uiLayer = new FlxLayer('ui');
+		uiLayer.atlas = FlxLayer.createAtlas(128, 128, "ui");
+		addLayer(uiLayer);
+		uiLayer.add(addBunniesBtn);
+		uiLayer.add(removeBunniesBtn);
+		uiLayer.add(touchSprite);
+		#end
+		
         #if !mobile
         FlxG.mouse.show();
         #end
     
         times = [];
 	}
-    
-    private var touchSprite:FlxSprite;
 	
 	private function addBunnies(numToAdd:Int,x:Float=0,y:Float=0):Void
 	{
@@ -169,7 +201,8 @@ class BunnyMarkState extends FlxState
 	override public function update():Void 
 	{
 		super.update();
-        
+		
+		#if (mobile)
         touches = FlxG.touchManager.touches;
 		for (touch in touches)
 		{
@@ -183,9 +216,9 @@ class BunnyMarkState extends FlxState
                 }
 			}
 		}
-        
+        #end
+		
         #if (desktop||flash)
-        
         if (FlxG.mouse.justReleased()) {
             touchSprite.x = FlxG.mouse.x-(touchSprite.width*.5);
             touchSprite.y = FlxG.mouse.y-(touchSprite.height*.5);
@@ -193,7 +226,6 @@ class BunnyMarkState extends FlxState
             addBunnies(incBunnies,FlxG.mouse.x,FlxG.mouse.y);
             }
         }
-        
         #end
 		
 		var t = Lib.getTimer();

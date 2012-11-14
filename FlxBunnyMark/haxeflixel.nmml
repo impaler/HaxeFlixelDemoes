@@ -9,7 +9,7 @@
  	
 	<set name="BUILD_DIR" value="export" />
 	
-	<app preloader="org.flixel.system.FlxPreloader" />
+	<!--<app preloader="org.flixel.system.FlxPreloader" />-->
 	
 	<classpath name="source" />
 	
