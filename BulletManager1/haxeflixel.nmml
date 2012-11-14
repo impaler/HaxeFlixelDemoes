@@ -14,6 +14,7 @@
 	<classpath name="source" />
 	
 	<haxelib name="nme" />
+	<haxelib name="flixel" />
 
     <assets path="assets/gfx" include="*.png" type="image" />
     

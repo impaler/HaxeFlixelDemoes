@@ -54,9 +54,9 @@ class TestState extends FlxState
 		while ( i < poolSize ) {
 		var tempPixel = new FlxEmitterExt();
 		tempPixel.setRotation( 0, 0 );
-		tempPixel.setMotion( 0, 2, 2.2, 360, 100 );
+		tempPixel.setMotion( 0, 2, 6, 360, 300 );
 		
-		var paritcleSize = 100;
+		var paritcleSize = 400;
 		var j = 0;
 		while ( j < paritcleSize ) {
 		    var particle =  new FadeParticle();

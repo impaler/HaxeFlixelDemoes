@@ -8,6 +8,7 @@ import org.flixel.FlxState;
 class PlayState extends FlxState
 	{
 		private var debug:FlxText;
+		private var controls:FlxText;
 
         //create all the game state objects, overriding create is the best place		
 		override public function create():Void
@@ -16,20 +17,22 @@ class PlayState extends FlxState
             Registry.init();
             
             //create some debug text
-            debug = new FlxText(0, 0, 200, "");
+            controls = new FlxText(0, 0, 360, "Press Ctrl to Fire! ---------- Press 1 / 2 / 3 to change Fire Type!");
+			debug = new FlxText(0, 10, 200, "");
             
             //add the state objects to the game
 			add(Registry.stars);
 			add(Registry.bullets);
 			add(Registry.player);
 			add(debug);
+			add(controls);
             
 		}
 		
 		override public function update():Void
 		{
             //update the debug text to tell us some useful things about the bullets FlxGroup
-			debug.text = "Bullet Pool: " + Registry.bullets.countLiving() + "/" + Registry.bullets.members.length + " - Press F1/F2/F3";
+			debug.text = "Bullet Pool: " + Registry.bullets.countLiving() + "/" + Registry.bullets.members.length;
 			
             //setup the logic to have different fire modes
 			if (FlxG.keys.justReleased("ONE"))

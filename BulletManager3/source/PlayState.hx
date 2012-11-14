@@ -20,48 +20,59 @@ class PlayState extends FlxState
             
             //create some debug text
             debug = new FlxText(0, 0, 200, "");
-            
-            //add the state objects to the game
-			var stars = new FlxLayer("stars");
+
 			add(Registry.stars);
+			add(Registry.background);
+			add(Registry.fx);
+			add(Registry.bullets);
+			add(Registry.player);
+			add(Registry.enemies);
+			add(Registry.enemyBullets);
+			add(Registry.hud);
+			add(debug);
+			
+			#if cpp
+			
+			//add the state objects to the game
+			var stars = new FlxLayer("stars");
 			stars.add(Registry.stars);
 			addLayer(stars);
 			
 			var bg = new FlxLayer("bg");
-			add(Registry.background);
 			bg.atlas = FlxLayer.createAtlas(Std.int(Registry.background.map.width), Std.int(Registry.background.map.height), "bg");
 			bg.add(Registry.background);
 			addLayer(bg);
 			
 			var fx = new FlxLayer("fx");
-			add(Registry.fx);
+			fx.atlas = FlxLayer.createAtlas(10,10, "fx");
 			fx.add(Registry.fx);
 			addLayer(fx);
 			
-//            add(Registry.enemies);
-//			add(Registry.enemyBullets);
-			
 			var player = new FlxLayer("player");
-			player.atlas = FlxLayer.createAtlas(Std.int(FlxG.width), Std.int(FlxG.height), "player");
-			add(Registry.bullets);
-			add(Registry.player);
+			player.atlas = FlxLayer.createAtlas(200, 200, "player");
 			player.add(Registry.bullets);
-			player.add(Registry.player);			
+			player.add(Registry.player);
 			addLayer(player);
 			
-//			var ui = new FlxLayer("ui");
-//			ui.atlas = FlxLayer.createAtlas(1024, 1024, "ui");
-//			ui.add(Registry.hud);
-//			add(Registry.hud);
-//			addLayer(ui);
+			var player = new FlxLayer("enemies");
+			player.atlas = FlxLayer.createAtlas(200, 200, "enemyBullets");
+			player.add(Registry.enemyBullets);
+			player.add(Registry.enemies);
+			addLayer(player);
 			
-//			var debugLayer = new FlxLayer("debug");	
-			add(debug);
-//			debugLayer.add(debug);
+			var ui = new FlxLayer("ui");
+			ui.atlas = FlxLayer.createAtlas(1024, 1024, "ui");
+			ui.add(Registry.hud);
+			addLayer(ui);
+			
+			var debugLayer = new FlxLayer("debug");	
+			debugLayer.add(debug);
 			addLayer(debug.layer);
 			
+			#end
+
 			times = new Array();
-            
+			
 		}
 	private var times:Array<Float>;
 	

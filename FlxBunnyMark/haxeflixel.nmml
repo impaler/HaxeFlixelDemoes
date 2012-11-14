@@ -9,11 +9,12 @@
  	
 	<set name="BUILD_DIR" value="export" />
 	
-	<!--<app preloader="org.flixel.system.FlxPreloader" />-->
+	<app preloader="org.flixel.system.FlxPreloader" />
 	
 	<classpath name="source" />
 	
 	<haxelib name="nme" />
+	<haxelib name="flixel" />
 	
     <assets path="assets/data" include="*.ttf" type="font" />
    	<assets path="assets" include="*.fgr" type="text" />
