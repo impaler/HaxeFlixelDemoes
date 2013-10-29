@@ -1,5 +1,5 @@
 package ;
-import org.flixel.FlxSprite;
+import flixel.FlxSprite;
 
 class Bullet extends FlxSprite
 {
@@ -9,6 +9,9 @@ class Bullet extends FlxSprite
     public function new()
     {
         super(0, 0,"assets/gfx/bullet.png");
+
+	    scrollFactor.x=0;
+	    scrollFactor.y=0;
 
 //	We do this so it's ready for pool allocation straight away
         exists = false;

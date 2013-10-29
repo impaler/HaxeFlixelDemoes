@@ -1,6 +1,6 @@
 package ;
 
-import org.flixel.FlxGroup;
+import flixel.group.FlxGroup;
 
 class EnemyBulletManager extends FlxGroup
 	{

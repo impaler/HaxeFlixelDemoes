@@ -1,6 +1,7 @@
 package ;
 
-import org.flixel.FlxGroup;
+import flixel.FlxG;
+import flixel.group.FlxGroup;
 
 class BulletManager extends FlxGroup
 {
@@ -22,6 +23,7 @@ class BulletManager extends FlxGroup
     // This lets us have a usefull method to FIRE and only use bullets in the poolSize
     public function fire(bx:Int, by:Int):Void
     {
+        FlxG.log.add("fire");
 		var bullet =  getFirstAvailable();
 		
         if (bullet  != null)

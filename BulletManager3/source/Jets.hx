@@ -1,6 +1,6 @@
 package;
 
-import nme.display.Bitmap;
+import flash.display.Bitmap;
 import flash.display.Bitmap;
 import flash.display.BitmapData;
 import flash.geom.Rectangle;

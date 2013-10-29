@@ -1,11 +1,11 @@
 package;
 
-import org.flixel.FlxSprite;
-import org.flixel.FlxG;
-import nme.Lib;
-import org.flixel.FlxParticle;
-import org.flixel.FlxEmitter;
-import org.flixel.FlxGroup;
+import flixel.util.FlxColor;
+import flixel.effects.particles.FlxParticle;
+import haxe.Timer;
+import flixel.effects.particles.FlxEmitter;
+import flixel.group.FlxGroup;
+import flixel.FlxSprite;
 
 class Fx extends FlxGroup
 {
@@ -34,6 +34,8 @@ class Fx extends FlxGroup
                 var whitePixel = new FlxParticle();
                 whitePixel.makeGraphic(2, 2);
 				whitePixel.alpha = Math.random();
+	            whitePixel.scrollFactor.x=0;
+	            whitePixel.scrollFactor.y=0;
                 tempPixel.add(whitePixel);
                 
                 p++;
@@ -44,14 +46,30 @@ class Fx extends FlxGroup
             i++;
         }
 
+	    var particleSize=80;
         //	Jet thrusters for trailing behind the ship
-        jet = new FlxEmitter();
+        //jet = new FlxEmitter();
+        jet = new FlxEmitter(0,0,particleSize);
         jet.setSize(8, 8);
         jet.gravity = 300;
         jet.setXSpeed( - 30, 30);
         jet.setYSpeed(80, 120);
         jet.setRotation(0, 0);
-        jet.makeParticles(Jets, 80, 0, true, 0);
+
+
+	    var p = 0;
+	    while (p < particleSize)
+	    {
+		    var whitePixel = new FlxParticle();
+		    whitePixel.makeGraphic(2, 2, FlxColor.LIME);
+		    whitePixel.alpha = Math.random();
+		    whitePixel.scrollFactor.x=0;
+		    whitePixel.scrollFactor.y=0;
+		    jet.add(whitePixel);
+
+		    p++;
+	    }
+        //jet.makeParticles(Jets, particleSize, 0, true, 0);
         jet.start(false);
 
         add(pixels);
@@ -87,7 +105,10 @@ class Fx extends FlxGroup
 	{
 		var flashObject = cast(object, FlxSprite);
 		flashObject.color = color;
-		haxe.Timer.delay(callback(restoreColor, flashObject), 10);
+
+
+
+		haxe.Timer.delay(restoreColor.bind(flashObject), 10);
 	}
 
 	private function restoreColor( object:FlxSprite ):Void

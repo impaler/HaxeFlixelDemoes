@@ -1,17 +1,16 @@
 package;
 
-import org.flixel.plugin.photonstorm.FlxDisplay;
-import org.flixel.FlxGame;
-import org.flixel.FlxU;
-import nme.Assets;
-import org.flixel.FlxG;
-import org.flixel.FlxSprite;
-import org.flixel.FlxTilemap;
-import org.flixel.FlxGroup;
+import openfl.Assets;
+import flixel.tile.FlxTilemap;
+import flixel.group.FlxGroup;
+import flixel.FlxG;
+import flixel.FlxSprite;
+import flixel.group.FlxGroup;
+
 
 //	import com.photonstorm.flixel.FlxStarField;
 	
-//	import org.flixel.*;
+//	import flixel.*;
 
 	class ScrollingBackground extends FlxGroup
 	{
@@ -25,31 +24,30 @@ import org.flixel.FlxGroup;
 		public function new() 
 		{
 			super();
-			
+
 			//	The starfield behind the map
 //			stars = new FlxStarField(0, 0, FlxG.width, FlxG.height, 200, 1);
 //			stars.setStarSpeed(0, 0.5);
-//			
+//
 			//	Our scrolling background map, created using DAME
 			map = new FlxTilemap();
 			map.loadMap(Assets.getText("assets/levels/mapCSV_Group1_Map1.csv"), "assets/levels/tiles.png", 16, 16, FlxTilemap.OFF);
 			map.x = (FlxG.width / 2) - (map.width / 2);
-//			map.y = -(map.height);
-			
-			//todo
-//			map.scrollFactor.x = 0.5;
-//			map.scrollFactor.y = 1;
+			//map.y = map.height;
+
+			map.scrollFactor.x = 0.5;
+			map.scrollFactor.y = 1;
 			
 			//	This is an invisible sprite that our scrolling background tracks
-			dolly = new FlxSprite(FlxG.width/2, FlxG.height);
-//			dolly = new FlxSprite(180, map.height);
+			//dolly = new FlxSprite(FlxG.width/2, FlxG.height);
+			dolly = new FlxSprite(180, map.height);
 			
 			dolly.visible = false;
 			
 			//	Tell Flixels camera system to follow this sprite
 			//	Call this AFTER setting the dolly coordinates to avoid the "camera panning to sprite" effect
 			//todo
-			FlxG.camera.follow(dolly,0);
+			FlxG.camera.follow(dolly,1);
 			
 //			add(stars);
 			add(map);
@@ -68,13 +66,13 @@ import org.flixel.FlxGroup;
 			dolly.velocity.y = -20;
 			
 			//	Have we scrolled off the top of our map?
-//			if (dolly.y < -480)
-//			{
-////					Yes, so let's reset back to the start again (we unfollow first to stop camera jittering)
+			if (dolly.y < -480)
+			{
+//					Yes, so let's reset back to the start again (we unfollow first to stop camera jittering)
 //				FlxG.camera.unfollow();
-//				dolly.y = map.height;
-//				FlxG.camera.follow(dolly, 1);
-//			}
+				dolly.y = map.height;
+				FlxG.camera.follow(dolly, 1);
+			}
 			
 			if ( map.y == FlxG.height) {
 				map.y = -(map.height);

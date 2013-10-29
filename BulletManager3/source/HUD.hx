@@ -1,14 +1,14 @@
 package;
 
+import flixel.util.FlxPoint;
+import flixel.util.FlxSpriteUtil;
+import flixel.ui.FlxBar;
+import flixel.addons.text.FlxBitmapFont;
+import flixel.group.FlxGroup;
 import Registry;
-import org.flixel.plugin.photonstorm.FlxBar;
-import org.flixel.FlxG;
-import org.flixel.plugin.photonstorm.FlxDisplay;
-import org.flixel.FlxSprite;
-import org.flixel.plugin.photonstorm.FlxBitmapFont;
-import org.flixel.FlxGroup;
-import flash.display.BitmapData;
-import flash.geom.Rectangle;
+import flixel.FlxG;
+import flixel.FlxSprite;
+import flixel.group.FlxGroup;
 
 	class HUD extends FlxGroup
 	{
@@ -22,15 +22,17 @@ import flash.geom.Rectangle;
 		public function new() 
 		{
 			super();
+
 			
 			panel = new FlxSprite(0, 0, 'assets/gfx/hud.png');
-			FlxDisplay.screenCenter(panel, true);
-			
+			FlxSpriteUtil.screenCenter(panel, true, false);
+
+
 			score = new FlxBitmapFont('assets/gfx/digits_font_ilkke.png', 7, 6, "0123456789", 10, 1);
 			score.setText("", false, 1, 0, FlxBitmapFont.ALIGN_CENTER);
 			score.x = panel.x + 11;
 			score.y = 12;
-			
+
 			lives = new FlxBitmapFont('assets/gfx/digits_font_ilkke.png', 7, 6, "0123456789", 10, 1);
 			lives.setText(Std.string(Registry.player.lives), false);
 			lives.x = panel.x + 119;
@@ -43,11 +45,24 @@ import flash.geom.Rectangle;
 			healthBar.y = 10;
 
 			liveUpdate = true;
-			
+
 			add(panel);
 			add(score);
 			add(lives);
 			add(healthBar);
+
+			var scrollFactor = new FlxPoint(0, 0);
+			this.setAll("scrollFactor",scrollFactor);
+
+//			panel.scrollFactor.x=0;
+//			panel.scrollFactor.y=0;
+//
+//            score.scrollFactor.x=0;
+//            score.scrollFactor.y=0;
+
+			//this.setAll("scrollFactor.x",0);
+			//this.setAll("scrollFactor.y",0);
+
 		}
 		
 		override public function update():Void
@@ -57,7 +72,7 @@ import flash.geom.Rectangle;
 			//	We set liveUpdate to "false" when we switch to the Game Over state, so it no longer polls objects that have been nulled
 			if (liveUpdate)
 			{
-				score.text = Std.string( FlxG.score );
+				score.text = Std.string( Registry.score );
 				lives.text = Std.string (Registry.player.lives);
 			}
 		}

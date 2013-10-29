@@ -1,19 +1,18 @@
 package;
 
-import nme.Assets;
-import nme.display.StageAlign;
-import nme.display.StageScaleMode;
-import nme.display.Sprite;
-import nme.events.Event;
-import nme.events.KeyboardEvent;
-import nme.Lib;
-import nme.ui.Keyboard;
-import org.flixel.FlxGame;
+import flash.ui.Keyboard;
+import flash.events.KeyboardEvent;
+import flixel.FlxGame;
+import flash.display.StageAlign;
+import flash.display.StageScaleMode;
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.Lib;
 
 /**
  * @author Joshua Granick
  */
-class Test extends Sprite 
+class Main extends Sprite
 {
 	
 	public function new () 
@@ -62,7 +61,7 @@ class Test extends Sprite
 	// Entry point
 	public static function main() {
 		
-		Lib.current.addChild(new Test());
+		Lib.current.addChild(new Main());
 	}
 	
 }

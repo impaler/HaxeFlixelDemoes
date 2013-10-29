@@ -1,13 +1,12 @@
 package;
 
-import org.flixel.plugin.photonstorm.FlxCollision;
-import org.flixel.FlxSprite;
+import flixel.util.FlxCollision;
+import flixel.FlxSprite;
 import Enemy;
-import nme.utils.Timer;
-import org.flixel.FlxG;
-import nme.Lib;
-import org.flixel.FlxObject;
-import org.flixel.FlxGroup;
+import flixel.FlxG;
+import flash.Lib;
+import flixel.FlxObject;
+import flixel.group.FlxGroup;
 
 class EnemyManager extends FlxGroup
 {
@@ -18,9 +17,9 @@ class EnemyManager extends FlxGroup
     {
         super();
 
-        releaseRate = 300;
+        releaseRate = 100;
 
-        var poolSize = 100;
+        var poolSize = 500;
         var i = 0;
         while (i < poolSize) {
             var enemy = new Enemy();
@@ -54,19 +53,20 @@ class EnemyManager extends FlxGroup
         }
     }
 	
-    public function bulletHitEnemy(bullet:FlxObject, enemy:FlxObject):Void
+    public function bulletHitEnemy(bullet:Bullet, enemy:Enemy):Void
     {
 		
-		if ( FlxCollision.pixelPerfectCheck(cast(bullet , FlxSprite), cast(enemy , FlxSprite)) ) {
+		if ( FlxCollision.pixelPerfectCheck(bullet,enemy) )
+        {
 			bullet.kill();
 
 			enemy.hurt(1);
 			
-			Registry.fx.flashEffect(cast(enemy , FlxSprite));
+			Registry.fx.flashEffect(enemy);
 			
 			Registry.fx.explodeBlock(Std.int(enemy.x+enemy.width*.5), Std.int(enemy.y+enemy.height));
 			
-			FlxG.score += 1;
+			Registry.score += 1;
 			
 		}
 		

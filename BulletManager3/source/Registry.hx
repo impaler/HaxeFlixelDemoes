@@ -1,12 +1,13 @@
 package;
 
-import org.flixel.FlxSprite;
-import org.flixel.plugin.photonstorm.FlxSpecialFX;
-import org.flixel.FlxG;
-import org.flixel.plugin.photonstorm.fx.StarfieldFX;
+import flixel.addons.plugin.effects.FlxSpecialFX;
+import flixel.addons.plugin.effects.fx.StarfieldFX;
+import flixel.FlxSprite;
+import flixel.FlxG;
 
 class Registry
 {
+    public static var score:Int=0;
     public static var stars:FlxSprite;
     public static var player:Player;
     
@@ -25,18 +26,21 @@ class Registry
     public static function init()
     {
 
-        if (FlxG.getPlugin(FlxSpecialFX) == null)
-        {
-            FlxG.addPlugin(new FlxSpecialFX());
-        }
-        
+
+        background = new ScrollingBackground();
+
+
+        FlxG.plugins.add(new FlxSpecialFX());
+
         var starfield = FlxSpecialFX.starfield();
-        
-        stars = starfield.create(0, 0, FlxG.width,FlxG.height, 300);
-        starfield.setStarSpeed ( 0, 1 );
-    
-		background = new ScrollingBackground();
-		
+
+        stars = starfield.create(0, 0, Std.int(FlxG.width),Std.int(FlxG.width), 1000, 1);
+        starfield.setStarSpeed(0, -2);
+        stars.scrollFactor.x=0;
+        stars.scrollFactor.y=0;
+
+        FlxSpecialFX.startFX();
+
         //create the player ship
         player = new Player();
         

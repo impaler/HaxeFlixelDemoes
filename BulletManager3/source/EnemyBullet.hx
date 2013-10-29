@@ -1,8 +1,8 @@
 package ;
 
-import org.flixel.plugin.photonstorm.FlxVelocity;
-import org.flixel.FlxG;
-import org.flixel.FlxSprite;
+import flixel.util.FlxVelocity;
+import flixel.FlxG;
+import flixel.FlxSprite;
 
 	class EnemyBullet extends FlxSprite
 	{

@@ -1,7 +1,7 @@
 package;
 
-import nme.Lib;
-import org.flixel.FlxGame;
+import flash.Lib;
+import flixel.FlxGame;
 	
 class BulletManagerGame2 extends FlxGame
 {
@@ -12,9 +12,6 @@ class BulletManagerGame2 extends FlxGame
 		var stageHeight:Int = Std.int(Lib.current.stage.stageHeight/2);
         
         //initialise the game and set the game state PlayState
-		super(stageWidth, stageHeight, PlayState, 2, 60, 60);
-        
-        //use flixel's handy inbuilt debugger
-		forceDebugger = true;
+		super(stageWidth, stageHeight, PlayState, 2, 120, 60);
 	}
 }

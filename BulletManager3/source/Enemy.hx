@@ -1,20 +1,22 @@
 package;
 
-import org.flixel.plugin.photonstorm.FlxMath;
-import org.flixel.plugin.photonstorm.FlxDelay;
-import org.flixel.FlxG;
-import org.flixel.FlxSprite;
+import flixel.util.FlxRandom;
+import flixel.util.FlxTimer;
+import flixel.util.FlxMath;
+import flixel.FlxG;
+import flixel.FlxSprite;
 
 class Enemy extends FlxSprite
 {
 	
-	private var fireTime:FlxDelay;
+	private var fireTime:FlxTimer;
 	private var willFire:Bool = false;
 	
     public function new()
     {
         super(0, 0, "assets/gfx/space-baddie.png");
-
+	    scrollFactor.x=0;
+	    scrollFactor.y=0;
         exists = false;
     }
 
@@ -26,11 +28,10 @@ class Enemy extends FlxSprite
         velocity.y = 50;
 		
 		//	Will they shoot at the player? 70% chance of doing so
-		if (FlxMath.chanceRoll(70))
+		if (FlxRandom.chanceRoll(70))
 		{
 			willFire = true;
-			fireTime = new FlxDelay(1000 + Std.int(Math.random() * 500));
-			fireTime.start();
+			fireTime = FlxTimer.start(1000 + Std.int(Math.random() * 500));
 		}
 
         health = 4;
@@ -41,14 +42,14 @@ class Enemy extends FlxSprite
     {
         super.kill();
 
-        FlxG.score += 100;
+        Registry.score += 100;
     }
 
     override public function update():Void
     {
         super.update();
 		
-		if (willFire && fireTime.hasExpired)
+		if (willFire && fireTime.finished)
 		{
 			Registry.enemyBullets.fire(Std.int(x), Std.int(y));
 			willFire = false;
